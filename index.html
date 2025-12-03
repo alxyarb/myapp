@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini App</title>
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        h1 { margin-bottom: 20px; }
+        .btn {
+            background: linear-gradient(45deg, #ff0000, #ff8800);
+            border: none;
+            padding: 15px 40px;
+            color: white;
+            font-size: 20px;
+            border-radius: 12px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(255, 69, 0, 0.5);
+            transition: transform 0.1s;
+        }
+        .btn:active { transform: scale(0.95); }
+    </style>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+    <h1>Привет, Арбитражник!</h1>
+    <p>Это твой первый Mini App.</p>
+    <br>
+    <button class="btn" onclick="sendData()">КРУТИТЬ</button>
+
+    <script>
+        // Сообщаем телеграму, что приложение готово
+        let tg = window.Telegram.WebApp;
+        tg.expand(); // Раскрыть на весь экран
+
+        function sendData() {
+            // Просто пример действия
+            tg.sendData("Пользователь нажал кнопку!");
+            alert("Кнопка работает!");
+        }
+    </script>
+</body>
+</html>
